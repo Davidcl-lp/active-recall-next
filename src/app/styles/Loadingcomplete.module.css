@@ -1,0 +1,33 @@
+.blur1{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    height: 100vh;
+    width: 100%;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loadingIndicator > p{
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo {
+    height: 10em;
+    animation: spin 3s linear infinite;
+    margin-left: 2em;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

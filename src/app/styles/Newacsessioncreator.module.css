@@ -1,0 +1,184 @@
+.NewAcSessionCreator{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    font-size: 16px;
+
+}
+.newAcMenu{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 10px;
+    height: 90%;
+    width: 80%;
+    z-index: 1;
+    background-color: white;
+    overflow-y: auto;
+    
+}
+.newAcMenuItem{
+    flex-grow: 1;
+}
+.title{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    font-weight: bold;
+
+}
+.form{
+    display: flex;
+    min-width: 100%;
+}
+.formItem{
+    width: 100%;
+}
+.formOption{
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+.inputContainer{
+    display: inline-block;
+    width: 15em;
+}
+.to{
+    display: inline-block;
+    margin-left: 1.2em;
+}
+.formOption>input, .inputContainer>input, .pagesProcessStart , .pagesProcessFinish{
+    width:5em;
+    height: 3em;
+    border: 1px solid #244F82;
+    border-radius: 0.2em;
+    margin-left: 2em
+
+}
+.highlightbarContainer{
+    width: 17em;
+}
+.difficultyOption{
+    background: none;
+    border: none;
+    font-size: 1em;
+    margin-left: 1.2em;
+}
+.difficultyOption.selected {
+    font-weight: bold; 
+}
+.highlightBar{
+    background-color: #244F82;
+    height: 0.3em;
+    margin-left: 1em;
+    margin-top:0.2em;
+    transition: width 0.2s ease;
+}
+.formFile{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.formFileImg{
+    margin-top: 2em;
+    margin-left: 5em;
+    margin-right: 5em;
+    height: 12em;
+    width: 12em;
+}
+.formFileContInput{
+    margin-top: 1em;
+    display: block;
+    position: relative;
+    background-color: #244F82;
+    color: white;
+    height: 3em;
+    width: 13em;
+    border-radius: 0.2em;
+}
+.formFileLabel{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1.3em;
+}
+.formFileLabel:hover{
+    cursor: pointer;
+}
+.formFileInput{
+    appearance: none; 
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 2em;
+} 
+.formFileContInput:hover{
+    background-color: white;
+    color: #244F82;
+    border: 1px solid black;
+}
+.formFileContImg{
+    border: #05348F dashed 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.fileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid rgb(0, 0, 0);
+    margin-top: 1em;
+    padding: 0.2em;
+    font-weight: 700;
+    max-width: 20em;
+    max-height: 4em;
+    overflow-y: auto;
+}
+.formButtonsContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+}
+.formButtons{
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer; 
+    outline: inherit;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    padding: 0.2em;
+    width: 7em;
+    font-size: 1.5em;
+    border-radius: 0.2em;
+    font-weight: 700;
+    transition: background-color 0.3s
+}
+.buttonCreate{
+    color: white;
+    background-color: black;
+    border: 1px solid;
+}
+.buttonCreate:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+.buttonCancel:hover{
+    color: white;
+    background-color: black;
+}
