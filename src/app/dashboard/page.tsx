@@ -6,13 +6,13 @@ import { DashBoardNewAcSession } from '../components/DashBoardNewAcSession';
 import { NewAcSessionCreator } from '../components/NewAcSessionCreator';
 import { extractQuestions } from '../controllers/extractQuestions';
 import { DashBoardMenuCurrentSession } from '../components/DashBoardCurrentSession';
-
+import { gptResponseApi } from '../services/gptResponseApi'
 export default function DashBoard() {
     const [visibleDashBoardNewAcSession, setVisibleDashBoardNewAcSession] = useState(true);
     const [visibleNewAcSessionCreator, setVisibleNewAcSessionCreator] = useState(false);
     const [visibleDashBoardCurrentSession, setVisibleDashBoardCurrentSession] = useState(false);
     const [questionsGlobal, setQuestionsGlobal] = useState([]);
-    const [questionsAndResponses, setQuestionsAndResponses] = useState([]); // Nuevo estado para preguntas y respuestas combinadas
+    const [combined, setCombined] = useState(''); // Variable para almacenar el texto combinado
 
     function openNewSession() {
         setVisibleNewAcSessionCreator(true);
@@ -31,18 +31,17 @@ export default function DashBoard() {
         setVisibleNewAcSessionCreator(false);
     }
 
-    const handleGpt = (gptResponse) => {
-        const combinedQuestionsAndResponses = questionsGlobal.map((question, index) => {
-            return {
-                question: question,
-                response: gptResponse[index]
-            };
+    const handleGpt = async (gptResponse) => {
+        let combinedText = '';
+
+        questionsGlobal.forEach((question, index) => {
+            combinedText += `Pregunta ${index + 1}: ${question}\nRespuesta: ${gptResponse[index]}\n\n`;
         });
 
-        console.log("Todo a corregir es: ", combinedQuestionsAndResponses);
-        // Guardamos las preguntas y respuestas en el estado
-        setQuestionsAndResponses(combinedQuestionsAndResponses);
-
+        console.log("Texto combinado:\n", combinedText);
+        setCombined(combinedText);
+        const gptCorrection = await gptResponseApi(combinedText);
+        console.log("Correcion de chatgpt", gptCorrection);
     }
 
     return (

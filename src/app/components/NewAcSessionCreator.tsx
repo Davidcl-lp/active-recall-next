@@ -115,7 +115,7 @@ export function NewAcSessionCreator({ loadingFunction, handleGpt, closeNewSessio
     let error = await handleFormErrors();
     if (error === false) {
       setLoading(true);
-      const gptResponse = await gpt('fghjfjhf'); // Cambiar con la llamada real
+      const gptResponse = await gpt(formData); // Cambiar con la llamada real
       setLoading(false);
       handleGpt(gptResponse);
     }
@@ -229,6 +229,7 @@ export function NewAcSessionCreator({ loadingFunction, handleGpt, closeNewSessio
               <input
                 type="file"
                 name="file"
+                id='formFileInput'
                 className={`${styles.formFileInput}`}
                 accept=".pdf, .doc, .docx"
                 onChange={handleChange}
